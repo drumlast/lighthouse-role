@@ -9,8 +9,8 @@
   ansible.builtin.file:
     path: "{{ lighthouse_base_dir }}"
     state: directory
-    owner: www-data
-    group: www-data
+    owner: "{{ ansible_user | default('www-data') }}"
+    group: "{{ ansible_user | default('www-data') }}"
     mode: "0755"
 
 - name: Checkout Lighthouse repo
