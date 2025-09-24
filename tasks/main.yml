@@ -5,6 +5,10 @@
     state: present
     update_cache: true
 
+- name: Mark lighthouse directory as safe for git
+  ansible.builtin.command: >
+    git config --global --add safe.directory {{ lighthouse_base_dir }}
+
 - name: Ensure base dir exists
   ansible.builtin.file:
     path: "{{ lighthouse_base_dir }}"
