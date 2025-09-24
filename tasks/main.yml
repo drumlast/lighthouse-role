@@ -19,6 +19,7 @@
     dest: "{{ lighthouse_base_dir }}"
     version: "master"
     force: true
+    update: yes
   notify: reload nginx
 
 - name: Deploy nginx site config
